@@ -1,0 +1,52 @@
+:root {
+  /**
+    Specifies the number of columns of text. For example, if your manuscript has
+    has two columns, set this to 2. If you have a single column, set this to 1.
+  */
+  --columns: 1; /* 1, 2, 3 etc. */
+
+  /**
+    Specifies the colour scheme of the document. The following variables are
+    available for tweaking. The default values are shown below.
+
+    Primary colour is used for links, titles, and other important elements.
+    Text colour is used for the main body of text.
+    Background colour is used for the background of the document.
+    Border colour is used for the border of the document.
+    Title colour is used for the title of the document.
+
+    Any valid CSS colour value is acceptable, e.g. rgb(0, 0, 0), #000000, etc.
+  */
+  --primary-color: #315A3C;
+  --text-color: #132521;
+  --background-color: #F6F7F6;
+  --border-color: var(--primary-color);
+  --title-color: var(--primary-color);
+
+  /**
+    Specifies the size of the border around the document. Any valid CSS unit is
+    acceptable (e.g. px, em, rem, etc.).
+  */
+  --border-size: 5px;
+
+  /**
+    Specifies the size of the text. the size of titles and other elements is
+    calculated relative to this value.
+
+    Any valid CSS unit is acceptable (e.g. px, em, rem, etc.).
+  */
+  --text-size: 1rem; /* sets the  */
+
+  /**
+    Set the align of the body text. Any valid CSS align value is acceptable
+    (e.g. left, right, center, justify).
+  */
+  --text-align: justify;
+
+  /**
+    Sets the maximum width of the document. Any valid CSS unit will do
+    (e.g. px, em, rem, etc.). The document is centred on the page and the
+    final width is calculated relative to the number of columns specified above.
+  */
+  --max-width: 700px;
+}

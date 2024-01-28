@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Inter", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+  font-size: var(--text-size);
+  line-height: calc(var(--text-size) * 1.5);
+  padding: 7rem 3rem 10rem 3rem;
+}
+
+tei-publicationStmt,
+tei-sourceDesc,
+tei-author:not(:first-of-type),
+tei-facsimile,
+tei-add,
+tei-note[data-origname="note"],
+tei-title:not(:first-of-type),
+tei-editor,
+tei-body [hidden],
+[data-origname="rdg"],
+tei-editionstmt {
+  display: none;
+}
+
+
+tei-teiheader cetei-original {
+  display: block;
+}
+tei-titleStmt {
+  text-align: left;
+  max-width: calc(var(--max-width) * var(--columns));
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  display: grid;
+  grid-template-columns: repeat(calc(var(--columns) * 2), 1fr);
+}
+tei-titleStmt tei-title {
+  color: var(--title-color);
+  font-size: calc(var(--text-size) * 3);
+  line-height: calc(calc(var(--text-size) * 3) * 1.25);
+  grid-column-start: 1;
+  grid-column-end: calc(calc(var(--columns) * 2) + 1);
+  display: block;
+  padding: 0 0 .5rem 0;
+  text-align: center;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .1em;
+}
+tei-titleStmt tei-author {
+  display: block;
+  font-size: var(--text-size);
+  line-height: calc(var(--text-size) * 1.5);
+  grid-column-start: 1;
+  grid-column-end: calc(calc(var(--columns) * 2) + 1);
+  text-align: center;
+  color: var(--text-color);
+}
+tei-titleStmt tei-author::after {
+  content: 'Responsibility statements';
+  font-weight: bold;
+  grid-column-start: 1;
+  margin-top: 6rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  text-align: left;
+  grid-column-end: calc(calc(var(--columns) * 2) + 1);
+  display: block;
+  margin-bottom: .5rem;
+  color: var(--text-color);
+}
+tei-titleStmt tei-respstmt {
+  display: block;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+tei-encodingDesc {
+  display: block;
+  border-left: var(--border-size) solid var(--border-color);
+  padding: .5rem 1rem;
+  max-width: calc(var(--max-width) * var(--columns));
+  margin-inline: auto;
+  margin-top: 3rem;
+  color: var(--text-color);
+}
+tei-encodingDesc::before {
+  content: 'Encoding description';
+  color: var(--title-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  padding-bottom: .25rem;
+  margin-bottom: .25rem;
+  display: block;
+  width: 100%;
+}
+tei-encodingDesc tei-p {
+  color: var(--text-color);
+  display: block;
+  padding: 0 0 0 0;
+  margin: 0;
+}
+
+
+tei-lb, tei-lg, tei-l {
+  display: block;
+}
+
+tei-text {
+  color: var(--text-color);
+  max-width: calc(var(--max-width) * var(--columns));
+  display: block;
+  text-align: var(--text-align);
+  margin: 0 auto;
+}
+tei-body {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  margin: 3rem 0 0;
+  padding: 0;
+}
+tei-body a {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 1px solid var(--primary-color);
+  transition: all .2s ease-in-out;
+}
+tei-body a:hover {
+  color: var(--text-color);
+  border-bottom: 1px solid var(--text-color);
+}
+tei-body tei-head {
+  font-size: calc(var(--text-size) * 2);
+  line-height: calc(calc(var(--text-size) * 2) * 1.5);
+  letter-spacing: .05rem;
+  font-weight: bold;
+  color: var(--title-color);
+  margin-bottom: 2rem;
+  display: block;
+  text-align: center;
+}
+
+tei-placename {
+  white-space: nowrap;
+}
+tei-placename:hover {
+  border-bottom: 1px dashed var(--text-color);
+}
+tei-placename::before {
+  content: "📍 ";
+  padding: 0 .25rem 0 0;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+tei-persname {
+  white-space: nowrap;
+}
+tei-persname:hover {
+  border-bottom: 1px dashed var(--text-color);
+}
+tei-persname::before {
+  content: "👤 ";
+  display: inline-block;
+  padding: 0 .25rem 0 0;
+  white-space: nowrap;
+}
+
+tei-p {
+  display: block;
+  padding: 0 0 calc(var(--text-size) * 1.5) 0;
+}
+tei-choice {
+  display: inline-block;
+  position: relative;
+  border-bottom: 1px dashed var(--border-color);
+}
+tei-choice tei-corr,
+tei-choice tei-reg,
+tei-choice tei-expan {
+  background-color:var(--primary-color);
+  color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: .5rem;
+  padding: .5rem .5rem .5rem .5rem;
+  display: none;
+  position: absolute;
+  bottom: calc(var(--text-size) * 1.5);
+}
+tei-choice:hover tei-corr,
+tei-choice:hover tei-reg,
+tei-choice:hover tei-expan {
+  display: block;
+}
+tei-cit {
+  font-style: italic;
+}
+tei-cit tei-bibl {
+  font-style: normal;
+  display: inline-block;
+  padding-left: .5rem;
+}
+tei-supplied[reason="illegible"] {
+  text-decoration: line-through;
+}
+tei-body cetei-original {
+  display: inline-block;
+}
+tei-pb {
+  width: 100%;
+  display: block;
+  grid-column-start: 1;
+  grid-column-end: calc(var(--columns) + 1);
+  border-left: var(--border-size) solid var(--border-color);
+  margin: 1rem 0;
+}
+tei-pb::before {
+  content: 'fol. ' attr(n);
+  display: inline-block;
+  color: var(--primary-color);
+  font-weight: bold;
+  padding-left: .5rem;
+  font-size: 1rem;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+tei-hi[rend='superscript:true;'] {
+  font-size: 0.8rem;
+  vertical-align: super;
+  line-height: 0.8rem;
+}
+tei-body > tei-div {
+  margin-top: 8rem;
+}
