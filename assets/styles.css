@@ -231,6 +231,9 @@ tei-pb::before {
   grid-column-start: 1;
   grid-column-end: 3;
 }
+tei-pb[resp]::before {
+  content: 'fol.' attr(n) ' resp. ' attr(resp);
+}
 tei-hi[rend='superscript:true;'] {
   font-size: 0.8rem;
   vertical-align: super;
