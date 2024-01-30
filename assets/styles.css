@@ -239,3 +239,7 @@ tei-hi[rend='superscript:true;'] {
 tei-body > tei-div {
   margin-top: 8rem;
 }
+tei-body tei-unclear {
+  font-style: italic;
+  text-decoration: underline;
+}
