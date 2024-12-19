@@ -40,6 +40,17 @@ tei-titleStmt {
   display: grid;
   grid-template-columns: repeat(calc(var(--columns) * 2), 1fr);
 }
+tei-seriesstmt {
+  display: block;
+  font-size: var(--text-size);
+  line-height: calc(var(--text-size) * 1.5);
+  grid-column-start: 1;
+  grid-column-end: calc(calc(var(--columns) * 2) + 1);
+  text-align: center;
+  color: var(--text-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 tei-titleStmt tei-title {
   color: var(--title-color);
   font-size: calc(var(--text-size) * 3);
