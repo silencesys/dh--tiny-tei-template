@@ -2,7 +2,7 @@
 
 Have you ever run a workshop on TEI and then struggled with where or how to publish the students' work? This template was created for that very reason. It has been designed to be as simple as possible, while still allowing students to make at least some adjustments so that they feel a sense of ownership over their work.
 
-## Limitations
+## Limitations
 - It does not work with images
 - It does not work with multiple files
 - It does not work very well with different readings
